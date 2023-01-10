@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <div class="timer">
+            <div class="timer sec">00:60</div>
+           <button class="score_btn">View High Score</button>
+
+        </div>
+     </header>
+    
+<button class="start_btn">Start Quiz</button>
+    <div class="container">
+         1+1=?<br>
+        <input type="checkbox" name="Q1"id="wrong">5<br>
+        <input type="checkbox" name="Q1"id="wrong">4<br>
+        <input type="checkbox" name="Q1"id="wrong">3<br>
+        <input type="checkbox" name="Q1" id="correct1">2<br>
+        <button class="next" onclick="next(1)">NEXT</button>
+
+    </div>
+    <div class="container">
+        2+1=?<br>
+       <input type="checkbox" name="Q2"id="wrong">5<br>
+       <input type="checkbox" name="Q2"id="wrong">4<br>
+       <input type="checkbox" name="Q2" id="correct2">3<br>
+       <input type="checkbox" name="Q2"id="wrong">2<br>
+       <button class="next" onclick="next(2)">NEXT</button>
+
+   </div>
+   <div class="container">
+    3+1=?<br>
+   <input type="checkbox" name="Q3" id="wrong">5<br>
+   <input type="checkbox" name="Q3" id="correct3">4<br>
+   <input type="checkbox" name="Q3"id="wrong">3<br>
+   <input type="checkbox" name="Q3"id="wrong">2<br>
+   <button onclick="result()">Submit</button>
+
+</div>
+
+
+<script>
+
+document.getElementsByClassName('container')[0].style.display="block"
+
+function next(id) {
+    document.getElementsByClassName('container')[id-1].style.display="none";
+    document.getElementsByClassName('container')[id].style.display="block";
+    
+}
+
+ 
+  function result() {
+    var score=0
+    if (document.getElementById('correct1').checked) {
+        score++
+
+    }
+     if (document.getElementById('correct2').checked) {
+        score++
+    }
+    if (document.getElementById('correct3').checked) {
+        score++
+    }
+   
+    alert("Awesome, your score is:"+ score);
+}
+
+
+
+const startTiming= 1
+let timer = startTiming*60
+const count=document.getElementsByClassName("timer")
+function updateTimer(){
+    const minutes=Math.floor(time/60)
+    let seconds=time%60
+    seconds = seconds<10 ? '0'+ seconds:seconds
+    count.innerHTML='${minutes}:${seconds}'
+    time--
+}
+
+const container = document.getElementById('wrong');
+btn.addEventListener('click',function onClick(event){
+    event.target.style.backgrondColor ='red'
+
+})
+
+
+</script>
+</div>
+</body>
+</html>
