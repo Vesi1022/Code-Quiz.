@@ -1,5 +1,7 @@
 # Code-Quiz.
 
+The code qiuz is able to run quiz with time and high score storage. 
+
 The subject quiz is desigend bsed on the below criteria: 
 
 GIVEN I am taking a code quiz
@@ -14,4 +16,5 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and score
 
-Kindly find below link for the user page. 
+Kindly find below link for the user page:
+https://vesi1022.github.io/Code-Quiz./
